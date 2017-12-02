@@ -16,30 +16,30 @@ while go
     str="";
     for k = 1 : numObj
         temp=s(k).Perimeter*s(k).Perimeter;
-        if 4*3.14*s(k).Area/temp>0.9
+        if 4*3.14*s(k).Area()/temp>0.9
             if s(k).Centroid(2)<25
                 if s(k).Centroid(1)<100
-                    str=str+"1"+" "
+                    str=str+"plot1"
                 else
-                    str=str+"2"+" "
+                    str=str+"plot2"
                 end
             elseif s(k).Centroid(2)<55
                 if s(k).Centroid(1)<100
-                    str=str+"3"+" "
+                    str=str+"plot3"
                 else
-                    str=str+"4"+" "
+                    str=str+"plot4"
                 end
             elseif s(k).Centroid(2)<85
                 if s(k).Centroid(1)<100
-                    str=str+"5"+" "
+                    str=str+"plot5"
                 else
-                    str=str+"6"+" "
+                    str=str+"plot6"
                 end
             else
                 if s(k).Centroid(1)<100
-                    str=str+"7"+" "
+                    str=str+"plot7"
                 else
-                    str=str+"8"+" "
+                    str=str+"plot8"
                 end
             end
         end
