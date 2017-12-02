@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_park_address"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:text="Address"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIN"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="74dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_pin"
+        android:layout_gravity="center_horizontal"
+        android:text="2435"
+        android:textSize="74sp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_tick"
+        android:visibility="invisible"
+        android:background="@drawable/ic_book_confirm"
+        />
+
+</LinearLayout>
