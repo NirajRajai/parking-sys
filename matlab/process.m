@@ -44,4 +44,7 @@ while go
             end
         end
     end
+   fid = fopen('ny.txt','wt');
+   fprintf(fid, '%s', str);
+   fclose(fid);
 end
