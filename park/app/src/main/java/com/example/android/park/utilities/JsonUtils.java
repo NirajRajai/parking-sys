@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
 import com.example.android.park.models.ParkInfo;
+import com.example.android.park.models.PlotInfo;
 
 public final class JsonUtils{
 
@@ -48,6 +49,33 @@ public final class JsonUtils{
 
 
         return parsedPark;
+    }
+
+    public static PlotInfo getPlot(Context context, String plotStr)
+            throws JSONException{
+
+        Log.d(TAG, "getInfo: reading json");
+
+        JSONObject parkJson = new JSONObject(plotStr);
+//        JSONArray parkArray = parkJson.getJSONArray("");
+//        ParkInfo[] parsedPark = new ParkInfo[parkArray.length()];
+
+        PlotInfo parsedPlot = new PlotInfo();
+//        for(int i=0; i<parkArray.length(); i++){
+
+        JSONObject plot = //parkArray.getJSONObject(i);
+                new JSONObject(plotStr);
+
+        parsedPlot.setPin(plot.getString("userpin"));
+        parsedPlot.setPlotNo(plot.getString("plotid"));
+
+
+
+        Log.d(TAG, "getInfo: value of parsedPark" + parsedPlot.toString());
+//        }
+
+
+        return parsedPlot;
     }
 }
 
