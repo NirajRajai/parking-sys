@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.park.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.example.android.park.MainActivity"
+    android:background="@drawable/back1"
 
+    >
 
-    <Button
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="12"/>
+
+        <Button
+        android:layout_margin="50dp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/map_button"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:padding="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find Parking"
+        android:backgroundTint="@color/common_google_signin_btn_text_light" />
+        <!--android:background="@drawable/round_button"/>-->
 
-        android:background="@drawable/round_button"/>
-</RelativeLayout>
+</LinearLayout>

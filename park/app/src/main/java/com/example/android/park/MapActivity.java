@@ -3,6 +3,7 @@ package com.example.android.park;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Camera;
 import android.location.Address;
 import android.location.Geocoder;
@@ -52,6 +53,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -120,7 +122,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void placeMarker(Double x, Double y, int id, ParkInfo parkInfo){
         park = new LatLng(x, y);
         parkFinal = parkInfo;
-        mMarker = mMap.addMarker(new MarkerOptions().position(park).title("Parking").snippet(parkInfo.getAvail() + "plots available. Tap to Book!"));
+        mMarker = mMap.addMarker(new MarkerOptions().position(park).title("Parking").snippet(parkInfo.getAvail() + " Plots available. Tap to Book!"));
         mMarker.setTag(id);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(park));
         mMap.setOnMarkerClickListener(this);
@@ -263,6 +265,20 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         mMap = googleMap;
+
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.style_json));
+
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
+        }
 
         if (mLocationPermissionsGranted) {
             getDeviceLocation();

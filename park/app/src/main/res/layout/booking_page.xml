@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/back1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_park_address"
+        android:textSize="35dp"
         android:layout_gravity="center_horizontal"
         android:padding="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-        android:text="Address"
+        android:text="PlotID"
         android:layout_marginTop="20dp"
+        android:textColor="#fff"
         />
 
 
     <TextView
+        android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PIN"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="74dp"
         />
@@ -27,16 +32,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_pin"
         android:layout_gravity="center_horizontal"
-        android:text="2435"
         android:textSize="74sp"
+        android:text="****"
+        android:textColor="#fff"
         />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:id="@+id/iv_tick"
+
+        android:layout_gravity="center_horizontal"
         android:visibility="invisible"
-        android:background="@drawable/ic_book_confirm"
+        android:background="@drawable/ic_action_name"
+
         />
 
 </LinearLayout>
